@@ -1,0 +1,24 @@
+{
+  "name": "astro-test",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "astro": "^4.2.4",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.1.10",
+    "@unocss/preset-attributify": "^0.58.3",
+    "@unocss/reset": "^0.58.3",
+    "eemoji": "^2.0.1",
+    "unocss": "^0.58.3"
+  }
+}

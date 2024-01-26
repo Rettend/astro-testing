@@ -1,0 +1,6 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "files": [
+    "src/env.d.ts"
+  ],
+}
