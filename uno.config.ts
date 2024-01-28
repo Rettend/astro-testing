@@ -6,15 +6,20 @@ import {
   transformerDirectives,
   presetAttributify,
   transformerVariantGroup,
+  transformerAttributifyJsx,
 } from 'unocss'
 
 export default defineConfig({
   shortcuts: [
-    { 'i-logo': 'i-logos-astro w-6em h-6em transform transition-800' },
+    {
+      'title': 'text-2xl font-bold m-5 p-2',
+      'link': 'text-primary hover:text-secondary transition underline',
+    }
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
+    transformerAttributifyJsx(),
   ],
   presets: [
     presetUno(),
