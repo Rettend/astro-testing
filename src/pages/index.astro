@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro'
+import { Navigation } from '../components/Navigation'
 import Footer from '../components/Footer.astro'
 
 const platform = 'portfolio'
@@ -14,7 +14,7 @@ const platform = 'portfolio'
     <title>Astro</title>
   </head>
   <body>
-    <Navigation />
+    <Navigation client:load />
 
     <h1>hello i like fast loading pages</h1>
 
