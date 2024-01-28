@@ -3,4 +3,8 @@
   "files": [
     "src/env.d.ts"
   ],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
 }

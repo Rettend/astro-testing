@@ -11,14 +11,21 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/solid-js": "^4.0.1",
     "astro": "^4.2.4",
+    "solid-js": "^1.8.12",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.1.10",
     "@unocss/preset-attributify": "^0.58.3",
     "@unocss/reset": "^0.58.3",
-    "eemoji": "^2.0.1",
+    "eemoji": "^2.0.2",
     "unocss": "^0.58.3"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "jsxSingleQuote": true
   }
 }
