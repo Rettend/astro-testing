@@ -1,21 +1,25 @@
 ---
 import { Navigation } from '../components/Navigation'
 import Footer from '../components/Footer.astro'
+import { ViewTransitions, fade } from 'astro:transitions'
 
 const { pageTitle } = Astro.props
 ---
 
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <Navigation client:load />
-    <h1 class="title">{pageTitle}</h1>
+    <Navigation transition:persist client:load />
+    <h1 transition:animate="slide" class="title">
+      {pageTitle}
+    </h1>
     <div mx-5>
       <slot />
     </div>
