@@ -1,11 +1,25 @@
 ---
+import For from '../components/For.astro'
+import Post from '../components/Post.astro'
 import BaseLayout from './BaseLayout.astro'
-const { frontmatter } = Astro.props
-
-const pageTitle = frontmatter.title
+const { data } = Astro.props
 ---
 
-<BaseLayout {pageTitle}>
-  <p mb-5>Written by {frontmatter.author}</p>
+<BaseLayout pageTitle={data.title}>
+  <div m-a flex-(~ row) items-center>
+    <div>
+      <p><em>{data.description}</em></p>
+      <p>{data.pubDate.toString().slice(0, 10)}</p>
+      <p>Written by {data.author}</p>
+    </div>
+    <div m-a>
+      <For each={data.tags}>
+        {(tag) => <Post title={tag} url={`/tags/${tag}`} />}
+      </For>
+    </div>
+  </div>
+
+  <img my-10 w-300px src={data.image.url} alt={data.image.alt} />
+
   <slot />
 </BaseLayout>

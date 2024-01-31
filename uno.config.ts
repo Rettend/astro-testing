@@ -1,20 +1,20 @@
 import {
   defineConfig,
+  presetAttributify,
   presetIcons,
   presetUno,
   presetWind,
-  transformerDirectives,
-  presetAttributify,
-  transformerVariantGroup,
   transformerAttributifyJsx,
+  transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
 
 export default defineConfig({
   shortcuts: [
     {
-      'title': 'text-2xl font-bold m-5 p-2',
-      'link': 'text-primary hover:text-secondary transition underline',
-    }
+      title: 'text-2xl font-bold m-5 p-2',
+      link: 'text-primary hover:text-secondary transition underline',
+    },
   ],
   transformers: [
     transformerDirectives(),
@@ -38,7 +38,7 @@ export default defineConfig({
       text: '#fff',
       primary: '#FF5700',
       secondary: '#FF9500',
-    }
+    },
   },
   preflights: [
     {

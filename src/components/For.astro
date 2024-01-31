@@ -1,0 +1,18 @@
+---
+interface Props<T> {
+  each: readonly T[]
+}
+
+const { each } = Astro.props
+
+let html = ''
+
+if (Astro.slots.has('default')) {
+  html = each.map(async (item: any, index: number) => {
+    const html = await Astro.slots.render('default', [item, index])
+    return html
+  })
+}
+---
+
+<Fragment set:html={html} />

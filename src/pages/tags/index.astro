@@ -1,0 +1,18 @@
+---
+import For from '../../components/For.astro'
+import Post from '../../components/Post.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+
+const pageTitle = 'Tags'
+const allPosts = await getCollection('posts')
+const tags = [...new Set(allPosts.flatMap((post) => post.data.tags))]
+---
+
+<BaseLayout {pageTitle}>
+  <div>
+    <For each={tags}>
+      {(tag) => <Post title={tag} url={`/tags/${tag}`} />}
+    </For>
+  </div>
+</BaseLayout>
